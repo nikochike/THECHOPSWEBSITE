@@ -5,7 +5,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 500;
   font-family: 'Courier New', Courier, monospace,  sans-serif;
 }
 
@@ -42,6 +42,15 @@ header {
   font-weight: 300;
 }
 
+.thanks {
+
+  margin: 250;}
+
+
+  p {
+    
+    margin-left: 80px;
+  }
 header a {
   color: #AAA;
   text-decoration: none;
