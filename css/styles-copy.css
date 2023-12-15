@@ -3,19 +3,13 @@
   /* border box means when i say something has a width, that width includes padding and border */
   box-sizing: border-box;
 }
-h3{
-  text-align: center;
-}
-h2{
-  color: darkblue;
-  text-align: center;
-}
+
 body {
   margin: 500;
   font-family: 'Courier New', Courier, monospace,  sans-serif;
 }
 
-.img {
+img {
   width: 100%;
   height: auto;
 }
@@ -95,98 +89,14 @@ header a {
 }
 
 .thumb {
-  width: 300px;
-  height: 300px;
   flex: 0 0 23%; 
-
-  /*flex-grow: 0;
+  /* flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 23%;  */
-
- /*width: 23%; */
+  /* width: 23%; */
   margin: 2rem auto;
-  /* These are the styles you need to add to your EXISTING .thumb in your css file */
-  /* If anything is bigger than our width and height, clip it aka dont show anythign that overflows */
-  overflow: hidden;
-  /* because we are going to absolute position something inside of this div, we need to make sure this one is positioned relative */
-  position: relative;
-}
-/* prepareing the image's initial state/style for our transform on hover */
-.thumb img {
-  width:100%; 
-  height:auto;
-  transform: scale(1);
-  transform: rotate(0deg);
-  transition: all 1s ease;
 }
 
-/* changes to our img when we hover  */
-.thumb:hover img {
-  transform: scale(1.5) rotate(-20deg);
-}
-
-
-      /* changes to our img when we hover  */
-      .thumb:hover img {
-        transform: scale(1.5) rotate(-20deg);
-      }
-
-      .mask {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.5);
-        opacity: 0;
-        transition: all 1s ease-in-out;
-      }
-
-      /* any styles you want for your title h2 */
-      .mask h2 {
-        margin: 0;
-      }
-
-      /* any styles you want for your description p */
-      .mask p {
-        font-style: italic;
-      }
-
-      /* our a tag that looks like a button */
-      a.info {
-        padding: 10px 20px;
-        border: 2px solid black;
-        border-radius: 10px;
-        background-color: #333;
-        color: white;
-        text-transform: uppercase;
-        cursor: pointer;
-        text-decoration: none;
-      }
-
-      .thumb:hover .mask {
-        opacity: 1;
-      }
-
-      /* bonus stuff */
-      .thumb .mask h2,
-      .thumb .mask p,
-      .thumb .mask a {
-        opacity: 0;
-        transform: scale(0);
-        transition: all 1s ease-in-out;
-      }
-
-      .thumb:hover .mask h2,
-      .thumb:hover .mask p,
-      .thumb:hover .mask a {
-        opacity: 1;
-        transform: scale(1);
-      }
 
 
      
@@ -295,7 +205,7 @@ header a {
 /* Smaller than ipad classic in portrait so we will assume mobile  */
 @media only screen and (max-width:767px){
   body {
-    background-color: rgba(237, 237, 245, 0.958);
+    background-color: blue;
   }
 
   header {
@@ -324,10 +234,6 @@ header a {
   .menu {
     flex-direction: column;
     width: 100%;
-    display: none;
-  }
-  .active {
-    display: block;
   }
 
   .menu li {

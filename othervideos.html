@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Chops on Sudan</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script>
+function toggleMenu() {
+        // grab the UL by ID
+        var menu = document.getElementById('menu')
+        // add/remove atcive class to show/hide dropdown with links
+        menu.classList.toggle('active')
+      }
+    </script>
   </head>
   <body>
     <!-- https://www.w3schools.com/html/html5_semantic_elements.asp -->
     <header>
       <h1 class="brand"><a href="#"><img style = "width: 125px; height: auto"src="./img/THELOGO.png"/></a></h1>
       <!-- This is hidden by CSS on desktop and tablet size but shown on mobile size -->
-      <span class="mobile-menu">&#8801; </span>
+      <span class="mobile-menu" onclick="toggleMenu()" >&#8801; </span>
       <!-- Main navigation, navs should always be an unordered list of anchor tags -->
       <nav>
-        <ul class="menu">
+        <ul class="menu" id="menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="https://www.thenotebookproject.org/" target ="_blank">Teacher Resources</a></li>

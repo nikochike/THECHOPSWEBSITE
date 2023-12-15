@@ -5,23 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Chops on Sudan</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script>
+      function toggleMenu() {
+        // grab the UL by ID
+        var menu = document.getElementById('menu')
+        // add/remove atcive class to show/hide dropdown with links
+        menu.classList.toggle('active')
+      }
+    </script>
   </head>
-  <body style = "background-color:rgb(0, 0, 0);">
+  <body>
+
     <header>
         <h1 class="brand"><a href="#"><img style = "width: 125px; height: auto"src="./img/THELOGO.png"/></a></h1>
         <!-- This is hidden by CSS on desktop and tablet size but shown on mobile size -->
-        <span class="mobile-menu">&#8801; </span>
+        <span class="mobile-menu" onclick="toggleMenu()" >&#8801; </span>
         <!-- Main navigation, navs should always be an unordered list of anchor tags -->
         <nav>
-          <ul class="menu">
+          <ul class="menu" id="menu">
             <li><a href="index.html">Home</a></li>
-    
-            <li><a href="https://www.thenotebookproject.org/" target ="_blank">Teacher Resources</a></li>
         
-            <li><a href="https://docs.google.com/presentation/d/e/2PACX-1vTyeaC-QcUEuKa9fIz78cnlNoI2BTwb8s42RRrAOlueHoXX_hjG4ocZ5I-k78t5P_uXnDfzx4_-YDns/pub?start=true&loop=true&delayms=3000" target = "_blank">About The Phone App<a></li>
+            <li><a href="https://www.thenotebookproject.org/" target ="_blank">Teacher Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="phoneapp.html">The Phone App<a></li>
           </ul>
         </nav>
       </header>
-    <div class="thumb"><img style = "width: 1400px; height: 700px; align-items: right;" src="./img/newsapp.png" /></div>
-    
-  </body>
+      <div style="height:100px;" style="background-color:black;">
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSscapOYByEHOaisgnjPtLa_3lYA_HZf_jeAmnp0_-wGVZh0OC22vPM6RpLQhryMHkOsxSba7ru8Kgx/embed?start=true&loop=true&delayms=3000" frameborder="0" width="1500" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+
+      </iframe>
+    </div>
+    </body>

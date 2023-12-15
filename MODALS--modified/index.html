@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modals</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style type="text/css">
+      /* this rule applies to everythign on the page, and it makes sure 
+      if you add a border or padding to anything it is still whatever width you told it to be  
+      the * for this rule means EVERYTHING
+      */
+      * {
+        box-sizing: border-box;
+      }
+      /*img {
+  width: 100%;
+  height: auto;
+}*/
+
+      /* Modal CSS */
+
+      /* This is the wrapper modal code, this this style is for the overlay in the background */
+      .infoModal {
+        /* this sticks it in place */
+        position: fixed;
+        /* this makes it cover the entire screen */
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /*  */
+        /* This is the transparent gray overlay backroung color */
+        /* change the 4th value to change the transparancy level */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* This make sure it is pulled in front of everything else on the page */
+        z-index: 99999;
+        /* This is the opacity. We start with it at 0 so we cant see it until we click the a tag */
+        opacity: 0;
+        /* this says when opacity changes in another css rule, have it take one second so we have a animation */
+        transition: opacity 700ms ease-in;
+        /* this makes sure we cant click on the stuff inside the invisble modal */
+        pointer-events: none;
+      }
+
+      /* this is the code to change the modal to be visible when you click the a tag */
+      .infoModal:target {
+        /* make the modal visible */
+        opacity: 1;
+        /* makes the modal clicakble */
+        pointer-events: auto;
+      }
+
+      /* this is the div for the modal box that holds your content */
+      /* this css rule says find the infoModal in your html and look for the FIRST div inside of it */
+      .infoModal > div {
+        /* this is how you control how big the modal is */
+        width: 95%;
+        /* this is needed so we can position our close button in the top right corner */
+        position: relative;
+        /* this changes how far you want to push it down from the top of the browser */
+        margin: 0 auto;
+        /* this is the space between this dev and the stuff inside of it */
+        padding: 30px;
+        background-color: rgb(0, 0, 0);
+      }
+
+      /* this is the css for your close button anchor tags */
+      .close {
+        /* this makes it in the top right corner */
+        position: absolute;
+        top: 0;
+        right: 0;
+        /*  */
+        /* this give it a width and height and the border radius of 50% makes it a circle */
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+
+        /* This is the flexbox stuff to center the X inside of this button */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* this is where youd change the color of your close button and the X inside */
+        background-color: white;
+        color: black;
+
+        /* this just changes the font of the X inside our button */
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        /* this removes the blue underling from a tags link text */
+        text-decoration: none;
+        /* this makes the button color change fade in and out on hover*/
+        transition: all 1s ease;
+      }
+
+      /* this tells the button to change text and background color when you hover on the button */
+      .close:hover {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <script>
+      // Waiting for the content in the page to be fully loaded
+      // this is called event listeners
+      document.addEventListener('DOMContentLoaded', function () {
+        // get our close buttons
+        let closeBtns = document.getElementsByClassName('close')
+        // turn them from an HTML collection into an array
+        closeBtns = [].slice.call(closeBtns)
+        // apply an event listener to all close buttons
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', reload)
+        })
+      })
+      // This is the function to reset all of the iframes when you close a modal.
+      // this ensures that the video isnt still playing in the background when you clsoe a modal!
+
+      // reload iframes when opening or closing a modal window
+      function reload() {
+        // get all of our iframes with videos in them
+        let videos = document.getElementsByTagName('iframe')
+        // turn the HTML collection into an array
+        videos = [].slice.call(videos)
+        // reload all of the iframe sources (this will force them all to stop playing)
+        videos.forEach((video) => {
+          video.src = video.src
+          console.log('resetting iframe source to: ', video.src)
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <!-- the href here is to an ID of a modal below, each href="#modalid" needs to match the id="modalid"-->
+    <a href="#info"
+    > <img src="./img/Sarah 2-- Blurred.jpg" 
+    style = "width: 25%; height: 25%;" alt="open video"
+  /></a>
+  
+    <a href="#info1">
+      <!-- This is the thumbnail image you choose for the video -->
+      <img src="./img/sarah--1--blurred.jpg" style = "width: 25%; height: 25%;" alt="open video"
+    /></a>
+    <br />
+    <a href="#info2"
+      > <img src="./img/The CHOPS--May 1.Telecommunication Attack in Sudan.jpg" style = "width: 25%; height: 25%;" alt="open video"
+    /></a>
+    <a href="#info3"
+      > <img src="./img/The Disappeared.jpg" style = "width: 25%; height: 25%;" alt="open video"
+    /></a><a href="#info4"
+    > <img src="./img/Civil resistance.jpg" style = "width: 25%; height: 25%;" alt="open video"
+  /></a><a href="#info5"
+  > <img src="./img/april 11th march--new.jpg" style = "width: 25%; height: 25%;" alt="open video"
+/></a><a href="#info6"
+> <img src="./img/sarah--1--blurred.jpg" style = "width: 25%; height: 25%;" alt="open video"
+/></a>
+<a href="#info7"
+> <img src="./img/sarah--1--blurred.jpg" style = "width: 25%; height: 25%;" alt="open video"
+/></a>
+<a href="#info8"
+> <img src="./img/sarah--1--blurred.jpg" style = "width: 25%; height: 25%;" alt="open video"
+/></a>
+
+    <!-- This is the wrapper for all of the code you need for your modal  -->
+    <div id="info" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <!-- This is where you copy paste embed code from vimeo -->
+       <!--   
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          
+
+          <iframe
+            src="https://player.vimeo.com/video/84902450?badge=0&amp;autopause=1&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            title="Math Tank HD"
+          ></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>-->
+
+<!--THIS IS THE CORRECT CODE TO USE TO EMBED CHOPS VIDEOS-->
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          
+
+          <iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+          frameborder="0" 
+      allow="autoplay; 
+      fullscreen; 
+      picture-in-picture" 
+      style="position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;" 
+      title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+    </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+
+        <!-- This is the end of copy paste code from vimeo -->
+      </div>
+    </div>
+    <!-- This is the end of the first modal code -->
+    <!-- HERE IS THE EMBED CODE FROM VIMEO -->
+
+    <!--<div style="padding:56.26% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" 
+      allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;
+      top:0;left:0;width:100%;height:100%;" 
+      title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+    </iframe></div><script src="https://player.vimeo.com/api/player.js"></script>-->
+
+    <!--<div id="info2" class="infoModal">
+      <div>
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding: 66.67% 0 0 0; position: relative">
+          <iframe
+            src="https://player.vimeo.com/video/84827126?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            title="Catenary Cloth"
+          ></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+    </div>-->
+  
+<div id="info1" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+<iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" 
+  allow="autoplay; 
+  fullscreen; 
+  picture-in-picture" 
+  style="position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;" 
+  title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+</iframe>
+    </div>
+  </div>
+</div>
+    
+<div id="info2" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+        <iframe src="https://player.vimeo.com/video/883307000?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+        title="THE CHOPS--EPISODE 6-The Technological Attack on a Revolution--FINALEDIT">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<div id="info3" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+      <iframe src="https://player.vimeo.com/video/883311365?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+      frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+      style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+      title="EPISODE 3--Sudan's Disappeared--final2"></iframe>
+    </div>
+  </div>
+</div>
+        
+<div id="info4" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+      <iframe src="https://player.vimeo.com/video/877494814?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+      style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+      title="THECHOPS-Civil Resistance part 1--3-8-2ND"></iframe>
+    </div>
+  </div>
+</div>
+
+<div id="info5" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+        <iframe src="https://player.vimeo.com/video/877490979?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+        style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+        title="EPISODE 5--Civil Disobedience--part 3--4-12-22--FINAL 3">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<div id="info6" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+<iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" 
+  allow="autoplay; 
+  fullscreen; 
+  picture-in-picture" 
+  style="position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;" 
+  title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+</iframe>
+    </div>
+  </div>
+</div>
+
+<div id="info7" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+<iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" 
+  allow="autoplay; 
+  fullscreen; 
+  picture-in-picture" 
+  style="position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;" 
+  title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+</iframe>
+    </div>
+  </div>
+</div>
+
+<div id="info8" class="infoModal">
+  <div>
+    <!-- This is the close button! if you delete this you cannot close a modal -->
+    <a href="#close" title="close" class="close">X</a>
+    <div style="padding: 56.25% 0 0 0; position: relative">
+<iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" 
+  allow="autoplay; 
+  fullscreen; 
+  picture-in-picture" 
+  style="position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;" 
+  title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+</iframe>
+    </div>
+  </div>
+</div>
+
+  </body>
+  </html>

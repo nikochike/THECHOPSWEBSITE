@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hover Effects</title>
+    <!-- Put all of this in your CSS file! DONT copy the <style> tag part -->
+    <style>
+      .img {
+        width: 100%;
+        height: auto;
+      }
+
+      .thumb {
+        /* This is just so we have a height and width for todays demo */
+        width: 300px;
+        height: 300px;
+        /* These are the styles you need to add to your EXISTING .thumb in your css file */
+        /* If anything is bigger than our width and height, clip it aka dont show anythign that overflows */
+        overflow: hidden;
+        /* because we are going to absolute position something inside of this div, we need to make sure this one is positioned relative */
+        position: relative;
+      }
+
+      /* prepareing the image's initial state/style for our transform on hover */
+      .thumb img {
+        transform: scale(1);
+        transform: rotate(0deg);
+        transition: all 1s ease;
+      }
+
+      /* changes to our img when we hover  */
+      .thumb:hover img {
+        transform: scale(1.5) rotate(-20deg);
+      }
+
+      .mask {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        transition: all 1s ease-in-out;
+      }
+
+      /* any styles you want for your title h2 */
+      .mask h2 {
+        margin: 0;
+      }
+
+      /* any styles you want for your description p */
+      .mask p {
+        font-style: italic;
+      }
+
+      /* our a tag that looks like a button */
+      a.info {
+        padding: 10px 20px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #333;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .thumb:hover .mask {
+        opacity: 1;
+      }
+
+      /* bonus stuff */
+      .thumb .mask h2,
+      .thumb .mask p,
+      .thumb .mask a {
+        opacity: 0;
+        transform: scale(0);
+        transition: all 1s ease-in-out;
+      }
+
+      .thumb:hover .mask h2,
+      .thumb:hover .mask p,
+      .thumb:hover .mask a {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thumb">
+      <!-- Your thumbnail image -->
+      <img
+        src="http://placekitten.com/300/300"
+        alt="title of your image goes here"
+      />
+      <!-- This is where all of the stuff that shows up on hover goes -->
+      <article class="mask">
+        <h2>Title of your video</h2>
+        <p>This your description</p>
+        <!-- This is the a tag that has the link to open your modal! -->
+        <a class="info" href="#youModalIDhere">Watch Video</a>
+      </article>
+    </div>
+  </body>
+</html>
