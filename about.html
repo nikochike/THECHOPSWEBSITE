@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Chops on Sudan</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+   
+   
+   <script>
+      // Waiting for the content in the page to be fully loaded
+      // this is called event listeners
+      document.addEventListener('DOMContentLoaded', function () {
+        // get our close buttons
+        let closeBtns = document.getElementsByClassName('close')
+        // turn them from an HTML collection into an array
+        closeBtns = [].slice.call(closeBtns)
+        // apply an event listener to all close buttons
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', reload)
+        })
+      })
+      // This is the function to reset all of the iframes when you close a modal.
+      // this ensures that the video isnt still playing in the background when you clsoe a modal!
+
+      // reload iframes when opening or closing a modal window
+      function reload() {
+        // get all of our iframes with videos in them
+        let videos = document.getElementsByTagName('iframe')
+        // turn the HTML collection into an array
+        videos = [].slice.call(videos)
+        // reload all of the iframe sources (this will force them all to stop playing)
+        videos.forEach((video) => {
+          video.src = video.src
+          console.log('resetting iframe source to: ', video.src)
+        })
+      }
+      function toggleMenu() {
+        // grab the UL by ID
+        var menu = document.getElementById('menu')
+        // add/remove atcive class to show/hide dropdown with links
+        menu.classList.toggle('active')
+      }
+
+    </script>
+  
+  </head>
+  <body>
+    <!-- https://www.w3schools.com/html/html5_semantic_elements.asp -->
+    <header>
+      <h1 class="brand"><a href="#"><img style = "width: 125px; height: auto"src="./img/THELOGO.png"/></a></h1>
+      <!-- This is hidden by CSS on desktop and tablet size but shown on mobile size -->
+      <span class="mobile-menu" onclick="toggleMenu()" >&#8801; </span>
+      <!-- Main navigation, navs should always be an unordered list of anchor tags -->
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://www.thenotebookproject.org/" target ="_blank">Teacher Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="phoneapp.html">The Phone App</a></li>
+         <!-- <li><a href="othervideos.html">MoreVideos</a></li>-->
+          <li><a href="specialthanks.html">Special Thanks</a></li>
+          <!--<li><a href="modaltest.html">MODAL</a></li>-->
+        </ul>
+      </nav>
+    </header>
+
+    <div>
+
+        <h1 class = "aboutheading">
+
+            HISTORY OF THE PROJECT
+        </h1>
+        <h3>
+           <p class="example">This project was born out of a deep regard for Sudan--its history, its culture, and its people.</p> 
+           <p class="example">The website is part of a project that addresses the dearth of consistent sources of news that are uncensored by government officials in Sudan and that can be readily and regularly accessed by individuals who do not own smartphones, as well as, by Sudanese citizens experiencing a wi-fi internet shutdown in Sudan.</p>
+           <p class="example">The website is the homebase for a news phone app.  This news phone app is a means of delivering news pieces to any type of phone that can receive calls--landline phones, smart cell phones, and non-smart phones.</p>
+           <p class="example">The target users of this phone app are Sudanese citizens from all social categories who are not satisfied with the options currently available to them for news. </p>
+           <p class="example">The project website (you are here!) hosts the stories that are at some point offered on the phone app.  It is the homebase of the news
+            phone app.  The phone app stories appear on the website as videos.  The stories can also be posted as video to a variety of social media sites.  
+            In particular, because the lengths of the project's news stories do not exceed the maximum length allowed for videos on X’s 
+            (formerly known as Twitter) site--2 mintues and 20 seconds)--they can easily be posted to the X platform. </p>
+            <p class="example"> The phone number to the app will be accessed by dialing a 
+            number with a Sudanese country code.   Therefore, users of the app will not incur any long-distance calling charges when they use the app.</p>
+
+           <p class="example">The news reports can be produced anywhere in the world and can be shared to an application processing interface (API) 
+            from anywhere in the world from a device with access to the internet. </p>
+
+           <p class="example">Sudanese citizens have lived daily with a lack of consistent sources of accurate news over the course of at least the last 5 years, especially during moments of political upheaval, when internet services were disrupted. Those who do not own a smartphone or a computer are existing daily in an almost full media black-out. </p>
+           <p class="example">This project's news phone app will offer a source for news that is uncensored by government officials, that will be operational when wi-fi internet services have been disrupted and a cellular network is still open, and can be accessed with a smart cell phone, a non-smart cell phone, or a landline phone. Therefore, this intervention will improve the access to news of individuals from a wide range of income groups--those who can afford smart phones and those who can not. </p>
+
+           
+
+        </h3>
+
+       
+    </div>
