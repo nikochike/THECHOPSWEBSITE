@@ -16,7 +16,9 @@ h2{
 .aboutheading {
   text-align:center;
 }
-
+.color {
+  color: blue;
+}
 body {
   margin: 500;
   font-family: 'Courier New', Courier, monospace,  sans-serif;
