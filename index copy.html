@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Chops on Sudan</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+   
+   
+   <script>
+      // Waiting for the content in the page to be fully loaded
+      // this is called event listeners
+      document.addEventListener('DOMContentLoaded', function () {
+        // get our close buttons
+        let closeBtns = document.getElementsByClassName('close')
+        // turn them from an HTML collection into an array
+        closeBtns = [].slice.call(closeBtns)
+        // apply an event listener to all close buttons
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', reload)
+        })
+      })
+      // This is the function to reset all of the iframes when you close a modal.
+      // this ensures that the video isnt still playing in the background when you clsoe a modal!
+
+      // reload iframes when opening or closing a modal window
+      function reload() {
+        // get all of our iframes with videos in them
+        let videos = document.getElementsByTagName('iframe')
+        // turn the HTML collection into an array
+        videos = [].slice.call(videos)
+        // reload all of the iframe sources (this will force them all to stop playing)
+        videos.forEach((video) => {
+          video.src = video.src
+          console.log('resetting iframe source to: ', video.src)
+        })
+      }
+      function toggleMenu() {
+        // grab the UL by ID
+        var menu = document.getElementById('menu')
+        // add/remove atcive class to show/hide dropdown with links
+        menu.classList.toggle('active')
+      }
+
+    </script>
+  
+  </head>
+  <body>
+    <!-- https://www.w3schools.com/html/html5_semantic_elements.asp -->
+    <header>
+      <h1 class="brand"><a href="#"><img style = "width: 125px; height: auto"src="./img/THELOGO.png"/></a></h1>
+      <!-- This is hidden by CSS on desktop and tablet size but shown on mobile size -->
+      <span class="mobile-menu" onclick="toggleMenu()" >&#8801; </span>
+      <!-- Main navigation, navs should always be an unordered list of anchor tags -->
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Home.</a></li>
+          <li><a href="about.html">About.</a></li>
+          <li><a href="blackhair.html">Black Hair.</a></li>
+          <li><a href="contributors.html">Contributors.</a></li>
+          <li><a href="https://www.thenotebookproject.org/" target ="_blank">Teacher Resources.</a></li>
+          <li><a href="contact.html">Contact.</a></li>
+          <li><a href="phoneapp.html">The Phone App.</a></li>
+         <!-- <li><a href="othervideos.html">MoreVideos</a></li>-->
+          <li><a href="specialthanks.html">Special Thanks.</a></li>
+          <!--<li><a href="modaltest.html">MODAL</a></li>-->
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- the reason stuff <div class="thumb"><img style = "width: 325px; height: 295px"src="./img/why.png" /></div> -->
+
+
+      <div class="thumb">
+         <img src="./img/Sarah 2-- Blurred.jpg" 
+    alt="open video"
+  />
+<!-- This is where all of the stuff that shows up on hover goes -->
+  <article class="mask">
+    <h2>An Interview with a Mother Fleeing Sudan,Part 2.</h2>
+    <b>........................................................</b><br>
+    <h3><b>In part two of a series, Sarah, a Sudanese  mother, describes her experiences in the early days of the recent war in Khartoum.</b></h3>
+    <!-- This is the a tag that has the link to open your modal! -->
+    <a class="info" href="#info">Listen</a>
+  </article>
+</div>
+
+
+
+
+
+      <!--<div class="thumb">-->
+        <!--Your thumbnail image -->
+       <!-- <img
+          src="http://placekitten.com/300/300"
+          alt="title of your image goes here"
+        />-->
+        <!-- This is where all of the stuff that shows up on hover goes -->
+        <!--<article class="mask">
+          <h2>Title of your video</h2>
+          <p>This your description</p>-->
+          <!-- This is the a tag that has the link to open your modal! -->
+          <!--<a class="info" href="#youModalIDhere">Watch Video</a>
+        </article>
+      </div>-->
+
+      <div class="thumb">
+        <img src="./img/sarah--1--blurred.jpg" 
+   alt="open video"
+ />
+<!-- This is where all of the stuff that shows up on hover goes -->
+ <article class="mask">
+  <h2>An Interview with a Mother Fleeing Sudan,Part 1.</h2>
+  <b>........................................................</b><br>
+  <h3><b>In part one of a series, Sarah, a Sudanese  mother, describes her experiences in the early days of the recent war in Khartoum.</b></h3>
+  
+   <!-- This is the a tag that has the link to open your modal! -->
+   <a class="info" href="#info1">Listen</a>
+ </article>
+</div>
+
+
+<!--
+      <div class="thumb">
+        <a href="#info1"
+    > <img src="./img/sarah--1--blurred.jpg" 
+    alt="open video"
+  /></a>
+      </div>-->
+
+
+      <div class="thumb">
+        <img src="./img/The CHOPS--May 1.Telecommunication Attack in Sudan.jpg"
+   alt="open video"
+ />
+<!-- This is where all of the stuff that shows up on hover goes -->
+ <article class="mask">
+  <h2>Blackouts and Sudan's Telecom War</h2>
+  <b>........................................................</b><br>
+  <h3><b>Recent conflicts in Sudan involve attacks on telecommunication infrastructures. Here is a quick overview.</b></h3>
+  
+   <!-- This is the a tag that has the link to open your modal! -->
+   <a class="info" href="#info2">Listen</a>
+ </article>
+</div>
+
+
+     <!-- <div class="thumb">
+        <a href="#info2"
+    > <img src="./img/The CHOPS--May 1.Telecommunication Attack in Sudan.jpg" 
+    alt="open video"
+  /></a>
+      </div>-->
+
+      <div class="thumb">
+        <img src="./img/The Disappeared.jpg" 
+   alt="open video"
+ />
+<!-- This is where all of the stuff that shows up on hover goes -->
+ <article class="mask">
+  <h2>Sudan's Disappeared</h2>
+  <b>........................................................</b><br>
+  <h3><b>Young activists are increasingly being arrested. Some have gone missing with no traces.</b></h3>
+  
+   <!-- This is the a tag that has the link to open your modal! -->
+   <a class="info" href="#info3">Listen</a>
+ </article>
+</div>
+
+      <!-- <div class="thumb">
+        <a href="#info3"
+    > <img src="./img/The Disappeared.jpg" 
+    alt="open video"
+  /></a>
+      </div>-->
+
+
+      <div class="thumb">
+        <img src="./img/Civil resistance.jpg"
+   alt="open video"
+ />
+<!-- This is where all of the stuff that shows up on hover goes -->
+ <article class="mask">
+  <h2>Civil Resistance in Sudan, Part 1.</h2>
+  <b>........................................................</b><br>
+  <h3><b>Non-violent civil disobedience is an important part of the pro-democracy movement in Sudan.</b></h3>
+  
+   <!-- This is the a tag that has the link to open your modal! -->
+   <a class="info" href="#info4">Listen</a>
+ </article>
+</div>
+
+      <!--<div class="thumb">
+        <a href="#info4"
+    > <img src="./img/Civil resistance.jpg" 
+    alt="open video"
+  /></a>
+      </div>-->
+
+      <div class="thumb">
+        <img src="./img/april 11th march--new.jpg" 
+   alt="open video"
+ />
+<!-- This is where all of the stuff that shows up on hover goes -->
+ <article class="mask">
+  <h2>Civil Resistance in Sudan, Part 3</h2>
+  <b>........................................................</b><br>
+  <h3><b>A report on a large pro-democracy march in April of 2021</b></h3>
+  
+   <!-- This is the a tag that has the link to open your modal! -->
+   <a class="info" href="#info5">Listen</a>
+ </article>
+</div>
+
+
+      <!--<div class="thumb">
+        <a href="#info5"
+    > <img src="./img/april 11th march--new.jpg" 
+    alt="open video"
+  /></a>
+      </div>-->
+
+      <div class="thumb">
+        <img src="./img/Yennenga.jpg" 
+   alt="open video"
+ />
+<!-- This is where all of the stuff that shows up on hover goes -->
+ <article class="mask">
+  <h2>Princess Yenenga</h2>
+  <b>........................................................</b><br>
+  <h3><b>The relationship of a fierce female warrior on a horse to women and bicycle culture in Burkina Faso.</b></h3>
+  
+   <!-- This is the a tag that has the link to open your modal! -->
+   <a class="info" href="#info6">Listen</a>
+ </article>
+</div>
+
+
+     <!-- <div class="thumb">
+        <a href="#info6"
+    > <img src="./img/Yennenga.jpg" 
+    alt="open video"
+  /></a>
+      </div>-->
+
+
+      <div class="thumb">
+        <img src="./img/Youth speak.jpg"
+   alt="open video"
+ />
+<!-- This is where all of the stuff that shows up on hover goes -->
+ <article class="mask">
+  <h2>Youth in Africa on Self-Determination</h2>
+  <b>........................................................</b><br>
+  <h3><b>High schoool students at a school in Ouagadougou, Burkina Faso share the views on imperialism and African cultural and economic sovereignty.</b></h3>
+  
+   <!-- This is the a tag that has the link to open your modal! -->
+   <a class="info" href="#info7">Watch Video</a>
+ </article>
+</div>
+
+
+     <!-- <div class="thumb">
+        <a href="#info7"
+    > <img src="./img/Youth speak.jpg" 
+    alt="open video"
+  /></a>
+      </div>-->
+
+
+
+      
+      <!--    
+    
+      <div class="thumb"><video controls = "controls">
+        <source src = "./VIDEO/EPISODE 3--Sudan's Disappeared--final2.mp4" type = "video/mp4" />
+        Your browser does not support the video tag.
+      </video></div>
+      <div class="thumb">
+        <video controls = "controls">
+        <source src = "./VIDEO/EPISODE 5--Civil Disobedience--part 3--4-12-22--FINAL 3.mp4" type = "video/mp4" />
+        Your browser does not support the video tag.
+      </video></div>
+      <div class="thumb"><video controls = "controls">
+        <source src = "./VIDEO/THE CHOPS--EPISODE 6-The Technological Attack on a Revolution--FINALEDIT.mp4" type = "video/mp4" />
+        Your browser does not support the video tag.
+      </video></div>
+
+      <div class="thumb"><video controls = "controls">
+        <source src = "./VIDEO/THE CHOPS--EPISODE 6-The Technological Attack on a Revolution--FINALEDIT.mp4" type = "video/mp4" />
+        Your browser does not support the video tag.
+      </video></div>
+      <div class="thumb"><video controls = "controls">
+        <source src = "./VIDEO/THE CHOPS--EPISODE 6-The Technological Attack on a Revolution--FINALEDIT.mp4" type = "video/mp4" />
+        Your browser does not support the video tag.
+      </video></div>
+      <div class="thumb">
+        <video controls = "controls">
+        <source src = "./VIDEO/The Chops--Episode 5--A Sudanese Mother's Story During the War--1.mp4" type = "video/mp4" />
+        Your browser does not support the video tag.
+      </video></div>
+      <div class="thumb">
+        <div style="padding:100% 0 0 0;position:relative;">
+          <iframe src="https://player.vimeo.com/video/877490979?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EPISODE 5--Civil Disobedience--part 3--4-12-22--FINAL 3">
+          </iframe></div><script src="https://player.vimeo.com/api/player.js">
+
+          </script>
+          </div>
+        
+        
+        
+        <video controls = "controls">
+        <source src = "./VIDEO/THE CHOPS--EPISODE 6-The Technological Attack on a Revolution--FINALEDIT.mp4" type = "video/mp4" />
+        Your browser does not support the video tag.
+      </video></div>-->
+      
+     
+      <!--<div class="thumb"><img src="./img/Yennenga.jpg" /></div>*/
+      /*<div class="thumb"><img src="./img/Yennenga.jpg" /></div>*/-->
+    </main>
+
+
+<!-- PUT ALL MODAL DIVS HERE -->
+    <div id="info" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          
+          <iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+          frameborder="0" 
+      allow="autoplay; 
+      fullscreen; 
+      picture-in-picture" 
+      style="position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;" 
+      title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+    </iframe>
+
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+    </div>
+
+    <div id="info1" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding: 56.25% 0 0 0; position: relative">
+    <iframe src="https://player.vimeo.com/video/877487746?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" 
+      allow="autoplay; 
+      fullscreen; 
+      picture-in-picture" 
+      style="position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;" 
+      title="The Chops--Episode 5--A Sudanese Mother's Story During the War--1">
+    </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div id="info2" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding:56.25% 0 0 0;position:relative;">
+          <iframe src="https://player.vimeo.com/video/883307000?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+          title="THE CHOPS--EPISODE 6-The Technological Attack on a Revolution--FINALEDIT"></iframe>
+        </div>
+        </div>
+      </div>
+    
+   
+
+    <div id="info3" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          <iframe src="https://player.vimeo.com/video/883311365?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+          title="EPISODE 3--Sudan's Disappeared--final2"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div id="info4" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          <iframe src="https://player.vimeo.com/video/877494814?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+          title="THECHOPS-Civil Resistance part 1--3-8-2ND"></iframe>
+        </div>
+      </div>
+    </div>
+    
+
+    <div id="info5" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding: 56.25% 0 0 0; position: relative">
+            <iframe src="https://player.vimeo.com/video/877490979?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+            title="EPISODE 5--Civil Disobedience--part 3--4-12-22--FINAL 3">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="info6" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding:56.25% 0 0 0;position:relative;">
+          <iframe src="https://player.vimeo.com/video/885301778?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EPISODE 4--Yennenga--FINAL"></iframe>
+        </div>
+      
+        </div>
+      </div>
+    </div>
+
+
+    <div id="info7" class="infoModal">
+      <div>
+        <!-- This is the close button! if you delete this you cannot close a modal -->
+        <a href="#close" title="close" class="close">X</a>
+        <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe src="https://player.vimeo.com/video/885304054?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EPISODE 2--Youth Speak-Need for Self-Sufficiency in Africa"></iframe>
+        </div>
+        </div>
+      </div>
+    
+
+
+  </body>
+</html>
